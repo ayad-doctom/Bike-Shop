@@ -56,7 +56,7 @@ function buyProduct(productName, price) {
                          "---\n" +
                          "الرجاء التواصل معي لاستكمال الطلب";
     
-    window.open("https://wa.me/212603943067?text=" + encodeURIComponent(whatsappMessage));
+    window.open("https://wa.me/212642487482?text=" + encodeURIComponent(whatsappMessage));
 }
 </script>
 

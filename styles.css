@@ -293,7 +293,6 @@ form {
   flex-direction: column;
   gap: 10px;
 }
-
 input, textarea {
   padding: 10px;
   border-radius: 6px;

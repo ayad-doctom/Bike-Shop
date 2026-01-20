@@ -45,3 +45,17 @@ function sendEmail() {
     "?subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(body);
 }
+// لكل منتج:
+<button onclick="buyProduct('دراجة نارية', 4500)">اشترِ الآن</button>
+
+<script>
+function buyProduct(productName, price) {
+    var whatsappMessage = "أريد شراء المنتج:\n" +
+                         "📦 المنتج: " + productName + "\n" +
+                         "💰 السعر: " + price + " درهم\n" +
+                         "---\n" +
+                         "الرجاء التواصل معي لاستكمال الطلب";
+    
+    window.open("https://wa.me/212603943067?text=" + encodeURIComponent(whatsappMessage));
+}
+</script>

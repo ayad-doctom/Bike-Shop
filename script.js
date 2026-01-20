@@ -1,62 +1,45 @@
-function sendWhatsApp() {
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var message = document.getElementById("message").value;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartElement = document.getElementById("cart");
+const totalElement = document.getElementById("total");
 
-  var whatsappNumber = "212642487482"; 
-
-  var text =
-    "الاسم: " + name + "%0A" +
-    "الهاتف: " + phone + "%0A" +
-    "الرسالة: " + message;
-
-  var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
-
-  window.open(url, "_blank");
+function addToCart(name, price) {
+  cart.push({ name, price });
+  saveCart();
+  renderCart();
 }
-function sendEmail() {
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var message = document.getElementById("message").value;
 
-  var email = "ayadimotosgmail@g
-
-  var subject = "رسالة جديدة من الموقع";
-  var body =
-    "الاسم: " + name + "\n" +
-    "الهاتف: " + phone + "\n\n" +
-    "الرسالة:\n" + message;
-
-  window.location.href =
-    "mailto:" + email +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  saveCart();
+  renderCart();
 }
-  var email = "ayadimotosgmail.com"; /
 
-  var subject = "رسالة جديدة من الموقع";
-  var body =
-    "الاسم: " + name + "\n" +
-    "الهاتف: " + phone + "\n\n" +
-    "الرسالة:\n" + message;
-
-  window.location.href =
-    "mailto:" + email +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
+function clearCart() {
+  cart = [];
+  saveCart();
+  renderCart();
 }
-// لكل منتج:
-<button onclick="buyProduct('دراجة نارية', 4500)">اشترِ الآن</button>
 
-<script>
-function buyProduct(productName, price) {
-    var whatsappMessage = "أريد شراء المنتج:\n" +
-                         "📦 المنتج: " + productName + "\n" +
-                         "💰 السعر: " + price + " درهم\n" +
-                         "---\n" +
-                         "الرجاء التواصل معي لاستكمال الطلب";
-    
-    window.open("https://wa.me/212642487482?text=" + encodeURIComponent(whatsappMessage));
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
-</script>
 
+function renderCart() {
+  cartElement.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${item.name} - $${item.price}
+      <button onclick="removeFromCart(${index})">❌</button>
+    `;
+    cartElement.appendChild(li);
+  });
+
+  totalElement.textContent = total;
+}
+
+renderCart();

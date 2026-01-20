@@ -43,3 +43,14 @@ function renderCart() {
 }
 
 renderCart();
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (cart.length === 0) {
+    alert("Cart is empty!");
+    return;
+  }
+
+  alert("Order placed successfully!");
+  clearCart();
+});

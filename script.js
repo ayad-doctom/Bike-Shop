@@ -3,7 +3,7 @@ function sendWhatsApp() {
   var phone = document.getElementById("phone").value;
   var message = document.getElementById("message").value;
 
-  var whatsappNumber = "212603943067"; 
+  var whatsappNumber = "212642487482"; 
 
   var text =
     "الاسم: " + name + "%0A" +

@@ -22,4 +22,31 @@ An e-commerce website for buying and selling motorcycles, electric bikes, and sp
 ## 👩‍💻 Author
 Ayad
 
-![Homepage](bike1, 2, 3, 4, 5, 6, 7, 8, 9, 10.jpg)
+# 🛵 Motorcycles & E-Bikes E-commerce Website
+
+A responsive front-end e-commerce website for buying and selling motorcycles, electric bikes, and spare parts.
+
+## 🌐 Live Demo
+(Add your GitHub Pages link here)
+
+## 🛠️ Technologies Used
+- HTML
+- CSS
+- JavaScript (Vanilla)
+
+## ✨ Features
+- Product listing
+- Shopping cart with total calculation
+- Remove items from cart
+- Cart persistence using localStorage
+- Checkout form
+- Fully responsive design
+
+## 📸 Screenshots
+(Add screenshots here)
+
+## 🎯 Purpose
+This project demonstrates my ability to build a real-world front-end application using core web technologies.
+
+## 👩‍💻 Author
+Ayad – Front-End Web Developer

@@ -218,3 +218,14 @@ footer {
   max-width: 300px;
   border-radius: 10px;
 }
+#cart li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#cart button {
+  background: red;
+  padding: 5px 8px;
+  border-radius: 5px;
+}

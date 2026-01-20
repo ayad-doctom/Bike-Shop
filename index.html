@@ -1,3 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoVeloShop - Vente de Motos, Vélos Électriques et Pièces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MotoVeloShop</div>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#products">Produits</a></li>
+                <li><a href="#cart">Panier</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page d'accueil -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue chez MotoVeloShop</h1>
+                <p>Découvrez nos motos, vélos électriques et pièces détachées de qualité.</p>
+                <a href="#products" class="btn">Voir les Produits</a>
+            </div>
+        </section>
+
+        <!-- Page Produits -->
+        <section id="products">
+            <h2>Nos Produits</h2>
+            <div class="categories">
+                <button class="category-btn active" data-category="motos">Motos</button>
+                <button class="category-btn" data-category="velos">Vélos Électriques</button>
+                <button class="category-btn" data-category="pieces">Pièces Détachées</button>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Produits seront ajoutés dynamiquement par JS -->
+            </div>
+        </section>
+
+        <!-- Panier et Commande -->
+        <section id="cart">
+            <h2>Votre Panier</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total">Total: 0 €</div>
+            <button id="checkout-btn" class="btn">Commander</button>
+            <div id="order-form" style="display: none;">
+                <form id="order-form-element">
+                    <label for="name">Nom:</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="address">Adresse:</label>
+                    <textarea id="address" required></textarea>
+                    <button type="submit" class="btn">Confirmer la Commande</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Page Contact -->
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <form id="contact-form">
+                <label for="contact-name">Nom:</label>
+                <input type="text" id="contact-name" required>
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 MotoVeloShop. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 <h2>🛒 Cart</h2>
 <ul id="cart"></ul>
 <button onclick="addToCart('Electric Bike', 1200)">Add to cart</button>
@@ -5,3 +90,5 @@
 <ul id="cart"></ul>
 <p><strong>Total:</strong> $<span id="total">0</span></p>
 <button onclick="clearCart()">Clear Cart</button>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+

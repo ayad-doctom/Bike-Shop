@@ -59,3 +59,4 @@ function buyProduct(productName, price) {
     window.open("https://wa.me/212603943067?text=" + encodeURIComponent(whatsappMessage));
 }
 </script>
+

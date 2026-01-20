@@ -150,3 +150,35 @@ function buyProduct(productName, price) {
     window.open("https://wa.me/212642487482?text=" + encodeURIComponent(whatsappMessage));
 }
 </script>
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (cart.length === 0) {
+    alert("Cart is empty!");
+    return;
+  }
+
+  alert("Order placed successfully!");
+  clearCart();
+});
+function filterProducts(keyword) {
+  document.querySelectorAll(".product").forEach(p => {
+    p.style.display = p.innerText.toLowerCase().includes(keyword.toLowerCase())
+      ? "block"
+      : "none";
+  });
+}
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const inputs = this.querySelectorAll("input, textarea");
+  for (let input of inputs) {
+    if (!input.value.trim()) {
+      alert("Please fill all fields");
+      return;
+    }
+  }
+
+  alert("Order placed successfully!");
+  clearCart();
+});
